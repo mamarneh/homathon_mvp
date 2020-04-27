@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>حاكيني</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+
+    <script src="./assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+
+    <script src="./assets/js/main.js"></script>
+    <link href="./assets/css/aos.css" rel="stylesheet">
+    <script src="./assets/js/aos.js"></script>
+</head>
+
+<body class="homepage">
+    
+    <div class="container header mw-100">    
+        <div class="navbar-container">
+            <nav class="navbar navbar-expand-md navbar-light sticky-top">
+                <div class="logo">
+                    <a href="./index.html">
+                        <img src="./assets/img/logo.png" alt="حاكيني" height="40">
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbarNav">
+                    <ul class="navbar-nav text-center mr-auto order-3">
+                        <li class="nav-item ml-md-30 ">
+                            <a class="nav-link p-10 p-md-0 py-md-9" href="#social">مرحبا! ادخل</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div> 
+        
+        <div class="container mw-100 row" data-aos="fade-up">
+            <form method="POST" class="row" action="./chatbot.html">
+            <div class="mt-mf-30 mr-mf-30 col-12 col-md-12 text-right">
+               
+                <div class="mt-20">
+                    <h5>ساعدنا لكي نحدد احتياجك</h5>
+                </div>
+                <div class="form-check m-5 rad">
+                    <label class="form-check-label rad" for="serviceType1">
+                        <input class="form-check-input" onclick="checkSelection()" required type="radio" name="serviceType" id="serviceType1" value="option1">
+                        <i></i>
+                        <span></span>
+                        أجب عن بعض الاسئلة
+                    </label>
+                </div>
+                <div style="display: none;" id="serviceType1Area">
+                    
+                    <div class="question">
+                        <div id="carouselExampleIndicators" class="slider col-12 mr-auto ml-auto row carousel fadeIn">
+                            <ol class="carousel-indicators mb-5 p-0">
+                              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                              <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                              <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                              <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                              <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+                              <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+                              <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+                              <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <span for="study"> المستوى الأكاديمي &nbsp;&nbsp;&nbsp; </span>
+                                <select name="study" class="form-control" id="study" placeholder="">
+                                    <option value="" disabled selected>إختر</option>
+                                    <option value="1">المرحلة المدرسية</option>
+                                    <option value="2">دبلوم</option>
+                                    <option value="2">بكالوريوس جامعي</option>
+                                    <option value="2">دراسات عليا</option>
+                                </select>
+                              </div>
+                              <div class="carousel-item">
+                                <span for="career"> المهنة &nbsp;&nbsp;&nbsp; </span>
+                                <input type="text" name="career" class="form-control" id="career">
+                              </div>
+                              <div class="carousel-item">
+                                <span for="quick_solution_off"> هل تبحث عن حل مستعجل؟ &nbsp;&nbsp;&nbsp; </span>
+                                <div class="switch" id="quick_solution">
+                                    <input type="radio" class="switch-input" name="quick_solution" value="off" id="quick_solution_off" checked>
+                                    <label for="quick_solution_off" class="switch-label switch-label-off">لا</label>
+                                    <input type="radio" class="switch-input" name="quick_solution" checked value="on" id="quick_solution_on">
+                                    <label for="quick_solution_on" class="switch-label switch-label-on">نعم</label>
+                                    <span class="switch-selection"></span>
+                                </div>
+                              </div>
+
+                              
+                              <div class="carousel-item">
+                                <span for="question4_off"> هل لديك اضطرابات جسدية أو صحية؟ &nbsp;&nbsp;&nbsp; </span>
+                                <div class="switch" id="question4">
+                                    <input type="radio" class="switch-input" name="question4" value="off" id="question4_off" checked>
+                                    <label for="question4_off" class="switch-label switch-label-off">لا</label>
+                                    <input type="radio" class="switch-input" name="question4" checked value="on" id="question4_on">
+                                    <label for="question4_on" class="switch-label switch-label-on">نعم</label>
+                                    <span class="switch-selection"></span>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <span for="question5_off"> هل تتعاطى الأدوية؟ &nbsp;&nbsp;&nbsp; </span>
+                                <div class="switch" id="question5">
+                                    <input type="radio" class="switch-input" name="question5" value="off" id="question5_off" checked>
+                                    <label for="question5_off" class="switch-label switch-label-off">لا</label>
+                                    <input type="radio" class="switch-input" name="question5" checked value="on" id="question5_on">
+                                    <label for="question5_on" class="switch-label switch-label-on">نعم</label>
+                                    <span class="switch-selection"></span>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <span for="question6_off"> هل حصلت على خدمات الصحة النفسية في السابق؟ &nbsp;&nbsp;&nbsp; </span>
+                                <div class="switch" id="question6">
+                                    <input type="radio" class="switch-input" name="question6" value="off" id="question6_off" checked>
+                                    <label for="question6_off" class="switch-label switch-label-off">لا</label>
+                                    <input type="radio" class="switch-input" name="question6" checked value="on" id="question6_on">
+                                    <label for="question6_on" class="switch-label switch-label-on">نعم</label>
+                                    <span class="switch-selection"></span>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <span for="question7_off"> هل تستخدم الكحول أو المخدرات؟ &nbsp;&nbsp;&nbsp; </span>
+                                <div class="switch" id="question7">
+                                    <input type="radio" class="switch-input" name="question7" value="off" id="question7_off" checked>
+                                    <label for="question7_off" class="switch-label switch-label-off">لا</label>
+                                    <input type="radio" class="switch-input" name="question7" checked value="on" id="question7_on">
+                                    <label for="question7_on" class="switch-label switch-label-on">نعم</label>
+                                    <span class="switch-selection"></span>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <span for="question8_off">هل عانيتَ او تعاني من أعراض صدمة سابقا أو حاليا؟ &nbsp;&nbsp;&nbsp; </span>
+                                <div class="switch" id="question8">
+                                    <input type="radio" class="switch-input" name="question8" value="off" id="question8_off" checked>
+                                    <label for="question8_off" class="switch-label switch-label-off">لا</label>
+                                    <input type="radio" class="switch-input" name="question8" checked value="on" id="question8_on">
+                                    <label for="question8_on" class="switch-label switch-label-on">نعم</label>
+                                    <span class="switch-selection"></span>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <span for="question9_off"> هل عانيتَ او تعاني من ظروف ضاغطة سابقا أو حاليا؟ &nbsp;&nbsp;&nbsp; </span>
+                                <div class="switch" id="question9">
+                                    <input type="radio" class="switch-input" name="question9" value="off" id="question9_off" checked>
+                                    <label for="question9_off" class="switch-label switch-label-off">لا</label>
+                                    <input type="radio" class="switch-input" name="question9" checked value="on" id="question9_on">
+                                    <label for="question9_on" class="switch-label switch-label-on">نعم</label>
+                                    <span class="switch-selection"></span>
+                                </div>
+                              </div>
+                              <div class="carousel-item">
+                                <span for="question10"> صف شكواك الرئيسية بجملة واحدة &nbsp;&nbsp;&nbsp; </span>
+                                <input type="text" name="question10" class="form-control" id="question10">
+                              </div>
+
+                            </div>
+                              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                          </div>
+                    </div>
+                </div>
+                <div class="form-check m-5 rad">
+                    <label class="form-check-label rad" for="serviceType2">
+                        <input class="form-check-input" onclick="checkSelection()" required type="radio" name="serviceType" id="serviceType2" value="option2">
+                        <i></i>
+                        <span></span>
+                        بماذا تشعر
+                    </label>
+                </div>
+                <div style="display: none;" class="serviceArea2" id="serviceType2Area">
+                    <label class="selfService" for="selfService1" onclick="showRelatedArea('1')">
+                        <input class="d-none" id="selfService1"  type="radio" checked name="selfService" value="1">
+                        <span>القلق</span>
+                    </label>
+                    <label class="selfService" for="selfService2" onclick="showRelatedArea('2')">
+                        <input class="d-none" id="selfService2"  type="radio" name="selfService" value="2">
+                        <span>اضطرابات نفسية</span>
+                    </label>
+                    <label class="selfService" for="selfService3" onclick="showRelatedArea('3')">
+                        <input class="d-none" id="selfService3"  type="radio" name="selfService" value="3">
+                        <span>الإدمان</span>
+                    </label>
+                    <label class="selfService" for="selfService4" onclick="showRelatedArea('4')">
+                        <input class="d-none" id="selfService4"  type="radio" name="selfService" value="4">
+                        <span>علاقات أسرية</span>
+                    </label>
+                    <div class="container mw-100">
+                        <div class="innerServiceArea innerServiceArea1">
+                            <label class="innerSelfService" for="innerSelfService1">
+                                <input class="d-none" id="innerSelfService1"  type="radio" checked name="innerSelfService" value="1">
+                                <span>قلق عام</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService2">
+                                <input class="d-none" id="innerSelfService2"  type="radio" name="innerSelfService" value="1">
+                                <span>الهلع</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService3">
+                                <input class="d-none" id="innerSelfService3"  type="radio" name="innerSelfService" value="1">
+                                <span>الرهاب (ايبوفلا)</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService4">
+                                <input class="d-none" id="innerSelfService4"  type="radio" name="innerSelfService" value="1">
+                                <span>القلق الاجتماعي</span>
+                            </label>
+                        </div>
+                        <div class="innerServiceArea innerServiceArea2">
+                            <label class="innerSelfService" for="innerSelfService21">
+                                <input class="d-none" id="innerSelfService21"  type="radio" checked name="innerSelfService2" value="1">
+                                <span>الاكتئاب</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService22">
+                                <input class="d-none" id="innerSelfService22"  type="radio" name="innerSelfService2" value="1">
+                                <span>اضطرابات الأكل</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService23">
+                                <input class="d-none" id="innerSelfService23"  type="radio" name="innerSelfService2" value="1">
+                                <span>الفصام (السكيزوفرينيا)</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService24">
+                                <input class="d-none" id="innerSelfService24"  type="radio" name="innerSelfService2" value="1">
+                                <span>الوسواس القهري</span>
+                            </label>
+                            <label class="innerSelfService" for="innerSelfService25">
+                                <input class="d-none" id="innerSelfService25"  type="radio" name="innerSelfService2" value="1">
+                                <span>اضظرابات ما بعد الصدمة</span>
+                            </label>
+                            <label class="innerSelfService" for="innerSelfService26">
+                                <input class="d-none" id="innerSelfService26"  type="radio" name="innerSelfService2" value="1">
+                                <span>الاضطرابات التحولية</span>
+                            </label>
+                        </div>
+                        <div class="innerServiceArea innerServiceArea3">
+                            <label class="innerSelfService" for="innerSelfService31">
+                                <input class="d-none" id="innerSelfService31"  type="radio" checked name="innerSelfService3" value="1">
+                                <span>إدمان على الكحول و المخدرات</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService32">
+                                <input class="d-none" id="innerSelfService32"  type="radio" name="innerSelfService3" value="1">
+                                <span>ادمان العلاقات الجنسية</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService33">
+                                <input class="d-none" id="innerSelfService33"  type="radio" name="innerSelfService3" value="1">
+                                <span>إدمان وسائل التواصل الإجتماعي</span>
+                            </label>
+                        </div>
+                        <div class="innerServiceArea innerServiceArea4">
+                            <label class="innerSelfService" for="innerSelfService41">
+                                <input class="d-none" id="innerSelfService41"  type="radio" checked name="innerSelfService4" value="1">
+                                <span>علاقات زوجية</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService42">
+                                <input class="d-none" id="innerSelfService42"  type="radio" name="innerSelfService4" value="1">
+                                <span>علاقات جنسية</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService43">
+                                <input class="d-none" id="innerSelfService43"  type="radio" name="innerSelfService4" value="1">
+                                <span>أطفال</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService44">
+                                <input class="d-none" id="innerSelfService44"  type="radio" name="innerSelfService4" value="1">
+                                <span>مراهقين</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService45">
+                                <input class="d-none" id="innerSelfService45"  type="radio" name="innerSelfService5" value="1">
+                                <span>الوالدية</span>
+                            </label>
+                        </div>
+                    </div>
+                    <label class="selfService" for="selfService5" onclick="showRelatedArea('5')">
+                        <input class="d-none" id="selfService5"  type="radio" name="selfService" value="5">
+                        <span>النوع الاجتماعي</span>
+                    </label>
+                    <label class="selfService" for="selfService6" onclick="showRelatedArea('6')">
+                        <input class="d-none" id="selfService6"  type="radio" name="selfService" value="6">
+                        <span>علاقات عاطفية</span>
+                    </label>
+                    <label class="selfService" for="selfService7" onclick="showRelatedArea('7')">
+                        <input class="d-none" id="selfService7"  type="radio" name="selfService" value="7">
+                        <span>مشاكل دراسية و مشاكل العمل</span>
+                    </label>
+                    <div class="container mw-100">
+                        <div class="innerServiceArea innerServiceArea5">
+                            <label class="innerSelfService" for="innerSelfService51">
+                                <input class="d-none" id="innerSelfService51"  type="radio" checked name="innerSelfService5" value="1">
+                                <span>إضطراب الهوية الجنسية</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService52">
+                                <input class="d-none" id="innerSelfService52"  type="radio" name="innerSelfService5" value="2">
+                                <span>رفض مجتمعي بناء على النوع</span>
+                            </label>
+                        </div>
+                        <div class="innerServiceArea innerServiceArea6">
+                            <label class="innerSelfService" for="innerSelfService61">
+                                <input class="d-none" id="innerSelfService61"  type="radio" checked name="innerSelfService6" value="1">
+                                <span>ألم الانفصال</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService62">
+                                <input class="d-none" id="innerSelfService62"  type="radio" name="innerSelfService6" value="2">
+                                <span>بناء علاقة صحية</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService63">
+                                <input class="d-none" id="innerSelfService63"  type="radio" name="innerSelfService6" value="3">
+                                <span>التخلص من علاقة سامة</span>
+                            </label>
+                        </div>
+                        <div class="innerServiceArea innerServiceArea7">
+                            <label class="innerSelfService" for="innerSelfService71">
+                                <input class="d-none" id="innerSelfService71"  type="radio" checked name="innerSelfService7" value="1">
+                                <span>صعوبات أكاديمية</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService72">
+                                <input class="d-none" id="innerSelfService72"  type="radio" name="innerSelfService7" value="2">
+                                <span>صعوبات الاندماج مع المحيط</span>
+                            </label>
+                            <span class="spacer"></span>
+                            <label class="innerSelfService" for="innerSelfService73">
+                                <input class="d-none" id="innerSelfService73"  type="radio" name="innerSelfService7" value="3">
+                                <span>صعوبات التعامل مع المدراء</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 text-center mt-20">
+                <button type="submit" class="btn btn-primary white" onclick=""> تأكيد التسجيل </button>
+            </div>
+        </form>
+        </div>
+        <div class="" data-aos="fade-up" style="position: absolute;left: 0;bottom: 0;">
+            <div class="mt-10 col-10 text-center">
+                <h3 class="white">صحة نفسية أفضل</h3>
+                <h5 class="white">صحة نفسية متاحة تلبي احتياجك في كل مكان وزمان!</h5>
+            </div>
+        </div>
+    </div>
+    <div class="container footer mw-100">  
+        <div class="row text-right" id="startnow" data-aos="fade-up">
+            <div class="col-12 mt-30 mb-30 text-center" id="social">
+                <div class="m-auto col-10 col-md-6 emergency p-10">
+                    إذا كنت في حالة تقتضي المساعدة الفورية وهناك خطورة على حياتك،<br>
+                    يرجى الاتصال مباشرة برقم الطوارئ الخاص بمنطقتك!
+                </div>
+            </div>
+            <div class="col-12 social">
+                <div class="m-auto col-12 col-md-6">
+                    <div class="col-12 text-center">
+                        <div class="form-group">
+                            <a href="http://instaram.com" target="_blank" class="col-2">
+                                <img src="./assets/img/insta.png" alt="حاكيني" height="40">
+                            </a>
+                            <a href="http://youtube.com" target="_blank" class="col-2">
+                                <img src="./assets/img/youtube.png" alt="حاكيني" height="40">
+                            </a>
+                            <a href="http://facebook.com" target="_blank" class="col-2">
+                                <img src="./assets/img/facebook.png" alt="حاكيني" height="40">
+                            </a>
+                            <a href="http://twitter.com" target="_blank" class="col-2">
+                                <img src="./assets/img/twitter.png" alt="حاكيني" height="40">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row col-12 mt-10 mb-10 text-center">
+                <div class="m-auto col-6 copyrights p-10">
+                    جميع الحقوق محفوظة - حاكيني 2020
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000
+        });
+
+        function checkData() {
+            if($('#captcha:checkbox:checked').length > 0) {
+                $('#captchaError').html('')
+                return true;
+            } else {
+                $('#captchaError').html('الرجاء اختيار هذا الحقل');
+            }
+        }
+
+        function checkSelection() {
+            if ($('#serviceType1:checked').length > 0) {
+                $('#serviceType1Area').show();
+                $('#serviceType2Area').hide();
+            } else {
+                $('#serviceType1Area').hide();
+            }
+            if ($('#serviceType2:checked').length > 0) {
+                $('#serviceType2Area').show();
+                $('#serviceType1Area').hide();
+            } else {
+                $('#serviceType2Area').hide();
+            }
+        }
+
+        function showRelatedArea(option){
+            $('.innerServiceArea').hide()
+            $('.innerServiceArea' + option).show()
+        }
+        $(document).ready(function (){
+            $('.innerServiceArea').hide()
+            $('.innerServiceArea' + $("input[name=selfService]").val()).show()
+            checkSelection()
+        })
+    </script>
+</body>
+
+</html>
